@@ -317,3 +317,65 @@ if(sueldoBase > 2000){
 let sueldoTotal=calculaSueldo(sueldoBase);
 console.log(`Usted ganaba ${sueldoBase}  su sueldo ahora es $ ${sueldoTotal}`);
 
+
+
+/* Funciones de los ejercicios for */
+
+/*2) Leer 10 números y obtener su cubo y su cuarta.*/
+/*3) Leer 10 números e imprimir solamente los números positivos*/
+/*4) Leer 20 números e imprimir cuantos son positivos, cuantos negativos y cuantos neutros.*/
+/*5) Leer 15 números negativos y convertirlos a positivos e imprimir dichos números.*/
+
+
+let numerosIngresados=[];
+let numCubo = [];
+let numCuarta = [];
+let numerosConvertidos = [];
+
+let valornum,neutros=0,positivos=0,negativos=0,numConvertido;
+
+function operacionesNumeros(){
+
+ for (let i = 0; i < 5; i++) {
+        let num = i+1;
+        let valornum = parseInt(prompt(`Ingrese el valor del número ${num}`));
+        
+        if (valornum == 0)
+        {
+            neutros=neutros+1;
+           
+        } else if(valornum < 0){
+            negativos=negativos+1;
+            numConvertido = Math.abs(valornum);     
+
+        }else {
+            positivos=positivos+1;
+        }
+
+        cubo = Math.pow(valornum,3);
+        cuarta = Math.pow(valornum,4);    
+        numerosIngresados.push(valornum);
+        numCubo.push(cubo); 
+        numCuarta.push(cuarta);  
+        numerosConvertidos.push(numConvertido);
+  }
+
+  console.log(`Los números ingresados fueron ${numerosIngresados}`);
+  console.log(`El cubo de los numeros ingresados son ${numCubo}`);
+  console.log(`La cuarta de los numeros ingresados son ${numCuarta}`);
+  console.log(`El total de números positivos son ${positivos}`);
+  console.log(`El total de números negativos son ${negativos}`);
+  console.log(`El total de números neutros son ${neutros}`);
+  console.log(`Los números convertidos son ${numerosConvertidos}`);
+  
+  return numCubo,numCuarta,positivos,negativos,neutros,numerosConvertidos;
+
+}
+
+let resultadosOperaciones=operacionesNumeros(valornum);
+
+
+
+
+
+
